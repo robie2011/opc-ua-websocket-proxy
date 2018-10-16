@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Live Metric</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <style>
+        .page-left {
+            background-color: dodgerblue;
+        }
+    </style>
+
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+
+<body>
+    <div class="row">
+        <div class="container">
+            <h1>
+                OPC UA Subscription Client
+                <span class="badge badge-success" id="online-badge">Online</span> 
+                <span class="badge badge-danger" id="offline-badge">Offline</span> 
+            </h1>
+            <h3>Live Values</h3>
+            <p>below you see live values send by opc-ua server through websocket proxy</p>
+
+            <h3 class="display-2">
+                <p class="badge badge-dark" id="metric" style="font-family: 'Courier New', Courier, monospace;">[offline]</p>
+            </h3>
+            
+            <h2>Subscription Configuration</h2>
+            <p>Add values to monitor e.g. <code>ns=2;s=Demo.Dynamic.Scalar.Double</code>.</p>
+            <textarea style="font-family: 'Courier New', Courier, monospace; width: 100%;" id="nodeIds" rows="2"
+                placeholder="enter row by row">
+ns=2;s=Demo.Dynamic.Scalar.Double
+</textarea>
+            <p><button class="btn btn-primary" onclick="updateOpcNodeListener()">Update</button></p>
+
+            <h3>Notes</h3>
+            <ul>
+                <li>You can use <a href="https://github.com/node-opcua/opcua-commander">opcua-commander</a> to find out node addresses</li>
+                <li>Test OPC UA Server at <code>opc.tcp://opcuaserver.com:48010</code> is hardcoded in <code>server.js</code></li>
+            </ul>
+        </div>
+
+        <div class="container" id="log" style="font-family: 'Courier New', Courier, monospace; color: white; background-color: darkslategray; max-height: 500px;overflow-y: scroll"></div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+<script src="browser.main.js"></script>
+
+</html>

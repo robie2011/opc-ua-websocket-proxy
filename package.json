@@ -1,0 +1,17 @@
+{
+  "name": "test-opcua-client-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sample_client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "browserify": "^16.2.3",
+    "node-opcua": "^0.4.6",
+    "ws": "^6.1.0"
+  }
+}
